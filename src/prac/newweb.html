@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--base-->
+        <title>css学习</title>
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" href="function.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        
+        <div>
+        <div style="width: 200px; height: auto; float: left; display: inline;">
+        <ul class="guide">
+            <p style="font-size: 20px;font-weight: bolder;font-family: '黑体','楷体','宋体';color: rgb(109, 131, 100);text-align: center;display: block;background-color:rgb(174, 255, 214);height: 10px;">导航栏</p>
+            <li class="gui"><a href="#guidance" aria-selected="true">导航栏</a></li>
+            <li class="gui special"><a href="#background">背景</a></li>
+            <li class="gui"><a href="#solved_problem">一个已解决的问题</a></li>
+            <li class="gui"><a href="#text_">文本格式</a></li>
+            <li class="gui"><a href="#text_decoration">文本修饰</a></li>
+            <li class="gui"><a href="#about_font">字体</a></li>
+            <li class="gui"><a href="#about_link">链接</a></li>
+            <li class="gui"><a href="#about_list">列表</a></li>
+            <li class="gui"><a href="#about_table">表格</a></li>
+            <li class="gui"><a href="#about_box">盒子模型</a></li>
+            <li class="gui"><a href="#border">边框</a></li>
+            <li class="gui"><a href="#about_outline">轮廓</a></li>
+            <li class="gui"><a href="#somepic">*示意图</a></li>
+            <li class="gui"><a href="#unknown">分组和嵌套选择器</a></li>
+            <li class="gui"><a href="#size">尺寸</a></li>
+            <li class="gui"><a href="#displayandvisibility">显示与可见性</a></li>
+            <li class="gui"><a href="#about_element">块和内联元素</a></li>
+            <li class="gui"><a href="#position">定位</a></li>
+            <li class="gui"><a href="#overflow">溢出</a></li>
+            <li class="gui"><a href="#float">浮动</a></li>
+            <li class="gui"><a href="#center">对齐</a></li>
+            <li class="gui"><a href="#unknown2">组合选择符</a></li>
+            <li class="gui"><a href="#pseudo_classandelement">伪类、伪元素</a></li>
+            <li class="gui"><a href="#menu">下拉菜单</a></li>
+            <li class="gui"><a href="#tip">提示工具</a></li>
+            <li class="gui"><a href="#picture">图片相关</a></li>
+            <li class="gui"><a href="#picture2">图片拼合</a></li>
+            <li class="gui"><a href="#media">媒体类型</a></li>
+            <li class="gui"><a href="#optional_attribute">属性选择器</a></li>
+            <li class="gui"><a href="#forms">表单</a></li>
+            <li class="gui"><a href="#counter">计数器</a></li>
+            <li class="gui"><a href="#layout">网页布局</a></li>
+            <li class="gui"><a href="#important">!important规则</a></li>
+        </ul>
+        </div>
+        <div style="width: auto; margin-left: 200px;float: left;padding:1px 16px;height:auto;display: inline;">
+        <h4 id="guidance">导航栏</h4>
+        <h4 style="clear: both;" id="background">关于背景</h4>
+        <p id="phase1">背景有一个attachment功能设置页面的滚动<br/>
+            scroll：背景图片随页面滚动而滚动（默认）<br/>
+            fixed：背景图片不会随页面的滚动而滚动<br/>
+            local：背景图片会随元素内容的滚动而滚动<br/>
+            效果详情请看以下网址演示<br/>
+            <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-attachment" target="_blank">background-attachment</a>
+        </p>
+        
+        <h4 id="solved_problem">一个已解决的问题</h4>
+        <div class="center" id="area">
+            <h5>测试</h5>
+            <p id="phase2">处理先前不能居中的问题
+            <br/>因为之前用到的都是内联样式<br/>所以不能解决的照样不能解决</p>
+        </div>
+        
+        <h4 id="text_">文本格式</h4>
+        <p class="just">这是啥对齐</p>
+        <p class="just">当text-align设置为"justify"，每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）。<br/></p>
+        <p class="just">文本，是指书面语言的表现形式，从文学角度说，通常是具有完整、系统含义（Message）的一个句子或多个句子的组合。一个文本可以是一个句子（Sentence）、一个段落（Paragraph）或者一个篇章（Discourse）。广义“文本”：任何由书写所固定下来的任何话语。（利科尔） 狭义“文本”：由语言文字组成的文学实体，代指“作品”，相对于作者、世界构成一个独立、自足的系统。</p>
+        
+        <h4 id="textDecoration" style="text-decoration: underline dashed yellow;">文本修饰</h4>
+        <p style="text-decoration: line-through overline underline dotted seagreen;">decation主要是用来修饰文本的，</p><p style="text-decoration:double line-through black">其中下划线尽量少用，</p><p style="text-decoration:wavy underline">防止误认为链接(文本修饰采用内联样式)</p>
+        
+        <h4 id="about_font">字体相关</h4>
+        <p>目前发现标题无法加粗，不知为何</p>
+        <p>你怎么可以忘了？em=16px</p>
+        <p style="font-style: italic;">内联斜体样式</p>
+        <p>感觉用宋体好丑= =</p>
+        <h4 id="about_link">关于链接</h4>
+        <p>a:hover 必须跟在 a:link 和 a:visited后面
+            <br/>a:active 必须跟在 a:hover后面</p>
+        <a href="https://www.bilibili.com" target="_blank">测试的网址</a>
+        <a class="bg" href="https://dictionary.cambridge.org/" target="_blank">再来个网址</a>
+        
+        <h4 id="about_list">关于列表</h4>
+        <div style="width: 240px;">
+            <div style="width: 120px; float: left;">
+            <ul>
+                <li>保研</li>
+                <li>就业</li>
+                <li>出国</li>
+            </ul>
+            </div>
+            <div style="width: 120px; float: left;"> 
+            <ol>
+                <li style="color: tan;">摸鱼</li>
+                <li style="color: teal">摸鱼</li>
+                <li style="color: steelblue;">摸鱼</li>
+                <li>摸鱼</li>
+            </ol>
+            </div>
+            <div style="clear: both;"><br/></div>
+        </div>
+        
+
+        <h4 id="about_table">关于表格</h4>
+        <table id="stu">
+            <caption>学生成绩表格</caption>
+            <tr style="color: red;">
+                <th style="color: red;">姓名</th>
+                <th>学号</th>
+                <th>科目</th>
+                <th>成绩</th>
+            </tr>
+            <tr class="spe">
+                <td>张三</td>
+                <td>202000001</td>
+                <td>数学</td>
+                <td>148</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>202000002</td>
+                <td>数学</td>
+                <td>149</td>
+            </tr>
+            <tr class="spe">
+                <td>王五</td>
+                <td>202000003</td>
+                <td>数学</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td>赵六</td>
+                <td>202000004</td>
+                <td>数学</td>
+                <td>140</td>
+            </tr>
+            <tr class="spe">
+                <td>陈七</td>
+                <td>202000005</td>
+                <td>数学</td>
+                <td>135</td>
+            </tr>
+            <tr>
+                <td>孙八</td>
+                <td>202000006</td>
+                <td>数学</td>
+                <td>140</td>
+            </tr>
+            <tr class="spe">
+                <td>钱九</td>
+                <td>202000007</td>
+                <td>数学</td>
+                <td>134</td>
+            </tr>
+        </table>
+
+        <h4 id="about_box">盒子模型</h4>
+        <p>margin:外边距（左右填充）<br/>border:边框<br/>padding:内边距（左右边距）<br/>content:内容</p>
+        <div style="background-color: snow; width: 200px; height: 200px; border: 25px double deeppink; margin:25px; padding: 25px;"></div>
+        <p>宽度、高度200px，加上内外边距以及边框的25*2px，最终宽度为350px高度也为350px</p>
+
+        <h4 id="border">边框</h4>
+        <p>border-style：属性1，属性2，属性3，属性4
+        <br/>上->右->下->左
+        <br/>border-style：属性1，属性2，属性3
+        <br/>上->左右->下
+        <br/>border-style：属性1，属性2
+        <br/>上下->左右
+        <br/>border-style：属性1
+        <br/>上下左右属性相同
+        <br/></p>
+        <div style="border-style: groove ridge inset outset;width: 200px;height: 180px;border-width: 10px 10px;border-color:green blue red yellow;">
+        <div style="width: 200px;height: 50px;color: green;text-align: center;">沟槽边框</div>
+        <div style="width: 100px;height: 100px;float: left;color: yellow;">突出边框</div>
+        <div style="width: 100px;height: 100px;float: right;color: blue;text-align: right;">脊边框</div>
+        <div style="clear: both;width: 200px;height: 30px;color: red;text-align: center;vertical-align: bottom;">嵌入边框</div>
+        </div>
+
+        <h4 id="about_outline">关于轮廓</h4>
+        <p class="outline">轮廓在边框外</p>
+
+        <h4 id="somepic">*一些示意图放出</h4>
+        <p style="font-weight: bolder;">盒子模型与边界关系图</p>
+        <img src="box-model.gif" width="400px" height="300px"> <img src="box_outline.gif" width="400px" height="300px"><br/>
+
+        <h4 id="marginandpadding">margin 外边距 padding 填充</h4>
+        <img src="VlwVi.png" width="500px" height="300px">
+
+        <h4 id="unknown">分组和嵌套选择器</h4>
+        <p style="color: cornflowerblue;">分组选择器</p><p>h1,h2,p</p>
+        <p>{</p><p>color:green;</p><p>}</p>
+        <p style="color: cornflowerblue;">嵌套选择器</p>
+        <ul>
+            <li>p{ }: 为所有 p 元素指定一个样式。</li>
+            <li>.marked{ }: 为所有 class="marked" 的元素指定一个样式。</li>
+            <li>.marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。</li>
+            <li>p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。</li>
+        </ul>
+
+        <h4 id="size">尺寸</h4>
+        <p>即height、width等使用</p>
+
+        <h4 id="displayandvisibility">display 显示 visibility 可见性</h4>
+        <p class="sighthidden">1234</p>
+        <p class="hidden">5678</p>
+
+        <h4 id="about_element">块和内联元素</h4>
+        <h5 class="？">块级元素（block）特性</h5>
+        <ul>
+            <li>总是独占一行，表现为另起一行开始，而且其后的元素也必须另起一行显示;</li>
+            <li>宽度(width)、高度(height)、内边距(padding)和外边距(margin)都可控制;</li>
+        </ul>
+        <h5 class="？">内联元素(inline)特性：</h5>
+        <ul>
+            <li>和相邻的内联元素在同一行;</li>
+            <li>宽度(width)、高度(height)、内边距的top/bottom(padding-top/padding-bottom)和外边距的top/bottom(margin-top/margin-bottom)都不可改变，就是里面文字或图片的大小;</li>
+        </ul>
+        <h5 class="？">块级元素主要有：</h5>
+        <ul>
+            <li>address , blockquote , center , dir , div , dl , fieldset , form , h1 , h2 , h3 , h4 , h5 , h6 , hr , isindex , menu , noframes , noscript , ol , p , pre , table , ul , li</li>
+        </ul>
+        <h5 class="？">内联元素主要有：</h5>
+        <ul>
+            <li>a , abbr , acronym , b , bdo , big , br , cite , code , dfn , em , font , i , img , input , kbd , label , q , s , samp , select , small , span , strike , strong , sub , sup ,textarea , tt , u , var</li>
+        </ul>
+        <h5 class="？">可变元素(根据上下文关系确定该元素是块元素还是内联元素)：</h5>
+        <ul>
+            <li>applet ,button ,del ,iframe , ins ,map ,object , script</li>
+        </ul>
+        <h5 class="？">CSS中块级、内联元素的应用：</h5>
+        <p>利用CSS我们可以摆脱上面表格里HTML标签归类的限制，自由地在不同标签/元素上应用我们需要的属性。</p>
+        <p>主要用的CSS样式有以下三个：</p>
+        <li>display:block  -- 显示为块级元素</li>
+        <li>display:inline  -- 显示为内联元素</li>
+        <li>display:inline-block -- 显示为内联块元素，表现为同行显示并可修改宽高内外边距等属性</li>
+        <p>我们常将所有&#60li&#62元素加上display:inline-block样式，原本垂直的列表就可以水平显示了。</p>
+
+        <h4 id="position">position 定位</h4>
+        <p class="pos_static">静态定位</p>
+        <!--p class="pos_fixed" style="color: honeydew;">动态定位</p-->
+        <p class="pos_relative">相对定位</p>
+        <!--p class="pos_absolute" style="color: honeydew;">绝对定位</p-->
+        <p class="pos_sticky" style="z-index: -1;">粘性定位（不支持）</p>
+        <p>重叠元素</p>
+        <img src="bg.jpg" style="position: absolute ;z-index: -1;width: 300px;height: 150px;">
+        <p class="sp">= =<br/>看不见我= =<br/>你是真的看不见我= =？<br/>我可不知道（笑）<br/><br/><br/><br/>= =</p>
+        <p style="cursor: help;">这一段文字是测试鼠标的= =</p>
+        <p style="cursor: pointer;">这一段也是</p>
+
+        <h4 id="overflow">overflow</h4>
+        <div style="overflow: auto; width: 200px; height: 100px; resize:both;">
+            <p>overflow选择visitable后文本可溢出元素框</p>
+            <p>选择hidden会修剪内容且看不到被修剪外的内容</p>
+            <p>选择scroll会修剪内容且提供滚动框</p>
+            <p>选择auto会自动判断选择scroll模式</p>
+            <p>12345111111111111</p>
+            <p>12345</p>
+        </div>
+        
+        <h4 id="float">float 浮动</h4>
+        <img class="thumbnail" src="klematis_small.jpg" width="107" height="90">
+        <img class="thumbnail" src="klematis2_small.jpg" width="107" height="80">
+        <img class="thumbnail" src="klematis3_small.jpg" width="116" height="90">
+        <img class="thumbnail" src="klematis4_small.jpg" width="120" height="90">
+        <img class="thumbnail" src="klematis_small.jpg" width="107" height="90">
+        <img class="thumbnail" src="klematis2_small.jpg" width="107" height="80">
+        <img class="thumbnail" src="klematis3_small.jpg" width="116" height="90">
+        <img class="thumbnail" src="klematis4_small.jpg" width="120" height="90">
+        <p style="clear: both;"></p>
+        
+        <h4 id="center">对齐、垂直对齐</h4>
+        <div class="center"><p>对齐</p></div>
+        <div class="vertical_center"><p>垂直对齐</p></div><br/>
+        <div class="vertical_center2"><p>另一种垂直对齐</p></div><br/>
+        <div class="pos_trans"><p>又一种垂直对齐</p></div>
+
+        <h4 id="unknown2">组合选择符</h4>
+        <p>" ",">","+","~"</p>
+        <p>“ ”使得某元素的所有相应子元素均产生效果</p>
+        <p>“>”使得某元素的所有相应一级子元素均产生效果</p>
+        <p>“+”使得某元素紧接在后的目标元素产生效果</p>
+        <p>“~”使得某元素后的所有兄弟元素均产生效果（相同父元素）</p>
+        <div class="tec1" style="background-color: snow;">
+            <p class="tes1">“ ”测试数据</p>
+            <p class="tes1">“ ”测试数据</p>
+            <p class="tes1">“ ”测试数据</p>
+        </div>
+        <div class="tec2" style="background-color: snow;">
+            <p class="tes2">“>”测试数据</p>
+            <p class="tes2">“>”测试数据</p>
+            <p class="tes2">“>”测试数据</p>
+        </div>
+        <div class="tec3" style="background-color: snow;">
+            <p class="tes2">“+”测试数据</p>
+            <p class="tes3">“+”测试数据</p>
+            <p class="tes2">“+”测试数据</p>
+            <p class="tes3">“+”测试数据</p>
+        </div>
+        <div class="tec3" style="background-color: snow;">
+            <p class="tes2">“~”测试数据</p>
+            <p class="tes3">“~”测试数据</p>
+            <p class="tes4">“~”测试数据</p>
+            <p class="tes3">“~”测试数据</p>
+            <p class="tes4">“~”测试数据</p>
+        </div>
+        <p class="tes4">“~”测试数据</p>
+        
+        <h4 id="pseudo_classandelement">伪类、伪元素</h4>
+        <h5 style="text-align: left;font-size: 12px;">伪类语法</h5>
+        <p>selector:pseudo-class {property:value;}</p>
+        <p>css中，selector.class:pseudo-class {property:value;}</p>
+        <p>伪类名称不区分大小写</p>
+        <p>输入一个数：</p>
+        <input id="grade" type="number" min="0" max="150"><br/><br/>
+        <div><a href="#pretty">pretty</a> <p style="display: inline;">&nbsp&nbsp&nbsp&nbsp</p> <p id="pretty" style="display: inline;line-height: 30px;">pretty</p><br/></div>
+        <div><a href="#dream">dream</a> <p style="display: inline;">&nbsp&nbsp&nbsp&nbsp</p> <p id="dream" style="display: inline;line-height: 30px;">dream</p></div>
+        <p style="text-indent: 2em;">伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，但它是基于文档之外的抽象，所以叫伪类。 与伪类针对特殊状态的元素不同的是，伪元素是对元素中的特定内容进行操作，它所操作的层次比伪类更深了一层，也因此它的动态性比伪类要低得多。实际上，设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种普通的选择器无法完成的工作。它控制的内容实际上和元素是相同的，但是它本身只是基于元素的抽象，并不存在于文档中，所以叫伪元素。</p>
+
+        <h4 id="menu">下拉菜单</h4>
+        <div class="me" style="display: inline-block;position: relative;">
+            <button class="but">小测试</button>
+            <div class="about_menu">
+                <button class="drop">1+1=?</button>
+                <button class="drop">1+1=?</button>
+                <button class="drop">1+1=?</button>
+            </div>
+        </div>
+
+        <h4 id="tip">提示工具</h4>
+        <div class="tool">TEXT
+        <span class="tips">tips</span></div>
+        
+        <h4 id="picture">图片相关</h4>
+        <div>
+            <div class="img">
+                <img src="klematis_small.jpg" alt="花" style="width: 100%; height: auto;">
+                <div style="text-align: center; padding: 10px;">一点描述</div>
+            </div>
+            <div class="img">
+                <img src="klematis2_small.jpg" alt="花" style="width: 100%; height: auto;">
+                <div style="text-align: center; padding: 10px;">一点描述</div>
+            </div>
+            <div class="img">
+                <img src="klematis3_small.jpg" alt="花" style="width: 100%; height: auto;">
+                <div style="text-align: center; padding: 10px;">一点描述</div>
+            </div>
+            <div class="img">
+                <img src="klematis4_small.jpg" alt="花" style="width: 100%; height: auto;">
+                <div style="text-align: center; padding: 10px;">一点描述</div>
+            </div>
+        </div>
+        <br/>
+        <div class="pic" style="background-image: url('background.jpg');clear: both;margin: auto;padding-top: 80px; width: 500px;height: 270px;background-repeat: no-repeat;">
+            <div style="text-align: center;color: cornsilk;width: 300px;height: 150px;  margin:auto ; top: 50%; border:3px dotted snow;background-color: rgba(112, 123, 112, 0.3);">
+                <p>呜呜呜哇哈哈哈哈哈哈</p>
+            </div>
+        </div>
+
+        <h4 id="picture2">图像拼合</h4>
+        <ul id="navlist">
+            <li id="home"><a href="#guidance"></a></li>
+            <li id="prev"><a href="#guidance"></a></li>
+            <li id="next"><a href="#guidance"></a></li>
+        </ul>
+        <br/><br/>
+
+        <h4 id="media">媒体类型</h4>
+        <p class="media_type">不显示啥东西</p>
+
+        <h4 id="optional_attribute">属性选择器</h4>
+        <p>简单演示</p>
+        <p title="sad ness">简单演示</p>
+        <div style="margin: auto;">
+            <input class="acc acc_text" type="text"><br/>
+            <input class="acc acc_password" type="password"><br/>
+            <button class="acc acc_button" type="button">确认</button>
+            <button class="set-it" type="reset">重置</button>
+            <button class="set">设置</button>
+            <button class="it-set?">摆设</button>
+        </div>
+
+        <h4 id="forms">表单</h4>
+        <div class="table" style="display: block; width: 800px; height: 800px; border: 2px double violet; ">
+            <legend style="font-size: 30px;color: darkblue; font-weight: bold;">一个表单</legend>
+            <label for="account">账号 </label>
+            <input type="text" id="account" name="account" placeholder="???" value="2020"><br/>
+            <label for="password">密码 </label>
+            <input type="password" id="password" name="password" placeholder="???" value="2020"><br/>
+            <label for="">选项</label>
+            <select id="select" name="select" style="height: 42px;">
+                <option value="true">true</option>
+                <option value="false">false</option>
+                <option value="_">???</option>
+            </select><br/>
+            <label for="textarea" style="text-align: left;">附加建议 </label><br/>
+            <textarea id="" style="height: 300px;width: 300px;resize: none;" placeholder="???!!!"></textarea><br/>    
+            <button type="submit">无效的提交方式</button>
+        </div>
+
+        <h4 id="counter">计数器</h4>
+        <div class="counter">
+            <h6 class="counter">概述</h6>
+            <h6 class="counter">计算机科学发展进程</h6>
+            <h6 class="counter">人工智能</h6>
+            <h6 class="counter">群体智能</h6>
+                <p>简介</p>
+                <p>部分算法简述</p>
+                <p>研究内容</p>
+            <h6 class="counter">机器学习</h6>
+        </div>
+
+        <h4 id="layout">网页布局</h4>
+        <p>网页布局有很多种方式，一般分为以下几个部分：<b>头部区域、菜单导航区域、内容区域、底部区域。</b></p>
+        <img src="DBD1E737-47C5-445E-BFEC-7547210D88D5.jpg" alt="网页布局图片">
+        <p>搞一下内容，太懒了，其他的不搬，详情：<a href="https://www.runoob.com/css/css-website-layout.html">点击这里！</a></p>
+        <img src="content.png" alt="内容布局" style="width: 1000px; height: 600px;">
+
+        <h4 id="important">!important规则</h4>
+        <p class="important" style="background-color: navy;">每个段落其实是设置了不同颜色的</p>
+        <p class="important" style="background-color: rgb(128, 0, 0);">每个段落其实是设置了不同颜色的</p>
+        <p class="important" style="background-color: rgb(115, 128, 0);">每个段落其实是设置了不同颜色的</p>
+        <p class="nimportant" style="background-color: navy;">原来设置的背景颜色</p>
+        <p class="nimportant" style="background-color: rgb(128, 0, 0);">原来设置的背景颜色</p>
+        <p class="nimportant" style="background-color: rgb(115, 128, 0);">原来设置的背景颜色</p>
+        <p>使用 !important 是一个坏习惯，应该尽量避免，因为这破坏了样式表中的固有的级联规则 使得调试找 bug 变得更加困难了。当两条相互冲突的带有 !important 规则的声明被应用到相同的元素上时，拥有更大优先级的声明将会被采用。</p>
+        <ul>使用建议
+            <li>一定要优先考虑使用样式规则的优先级来解决问题而不是 !important</li>
+            <li>只有在需要覆盖全站或外部 CSS 的特定页面中使用 !important</li>
+            <li>永远不要在你的插件中使用 !important</li>
+            <li>永远不要在全站范围的 CSS 代码中使用 !important</li>
+        </ul>
+        <br/>
+        <h1 style="font-family: '楷体';">完结！！</h1>
+        </div>
+        </div>
+    </body>
+</html>

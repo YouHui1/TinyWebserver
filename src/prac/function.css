@@ -1,0 +1,559 @@
+body
+{
+    background-color: rgb(168, 255, 232);
+    /* background-image: url('bg2.jpg'); */
+    /*background-repeat: no-repeat;*/
+    background-attachment: loca1;
+}
+.center
+{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 2px solid saddlebrown;
+    text-align: center;
+}
+.vertical_center
+{
+    line-height: 100px;
+    vertical-align: middle;
+    border: 2px solid saddlebrown;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+.vertical_center2
+{
+    text-align: center;
+    margin: auto;
+    width: 150px;
+    padding: 50px 0;
+    border: 2px solid saddlebrown;
+}
+.vertical_center p
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+.pos_trans
+{
+    margin: auto;
+    width: 230px;
+    position: relative;
+    height: 100px;
+    border: 2px solid saddlebrown;
+}
+.pos_trans p
+{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+}
+#area
+{
+    margin: auto;
+    width: 200px;
+    height: 150px;
+   /* text-align: center; */
+    text-align: center;
+    background-color: greenyellow;
+    border:rgba(rgb(175, 25, 25), rgb(122, 216, 122), rgb(20, 20, 119), alpha);
+}
+h5
+{
+    text-align: center;
+    font-size: 15px;
+    color: #82681ff8;
+}
+#phase2 {font-size: 11px;}
+p.just 
+{
+    text-align: justify;
+    text-indent: 2em;
+}
+h4 
+{
+    color: rgb(143, 29, 243);
+    font-family: "楷体","宋体";
+}
+p 
+{
+    letter-spacing: 0.75px;
+    line-height: 19px;
+    font-family:  "宋体","Times New Roman","黑体";
+    font-weight: 500;
+}
+/*a {text-decoration: none;}*/
+a:link{color: royalblue;}
+a:visited{color: blueviolet;}
+a:hover
+{
+    color: chartreuse;
+    background-color: rgb(54, 60, 11);
+    text-decoration: underline;
+}
+a:active{color:darkslateblue}
+a.bg:link{background-color: rgb(208, 215, 221);}
+a.bg:visited{background-color:tomato;}
+a.bg:hover{background-color:blue;}
+a.bg:active{background-color:chocolate;}
+ul 
+{
+    list-style-type: square; 
+    color:rgba(24, 124, 223, 2);
+}    
+ol 
+{
+    list-style-type: upper-alpha; 
+    color: sandybrown;
+    padding: 0px;
+    margin: 10px;
+}
+#stu
+{
+    font-family: "宋体"，"Times New Roman";
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    border: 3px double slateblue;
+    color: saddlebrown;
+    width: 600px;
+    height: 300px;
+}
+#stu th, #stu td
+{
+    font-size: 1em;
+    border: 1px solid seagreen;
+    padding: 3px 5px 3px 5px;
+}
+#stu th
+{
+    font-size: 1.15em;
+    font-weight: bold;
+    background-color: springgreen;
+    color:purple;
+    padding-top: 4px;
+}
+#stu tr.spe td
+{
+    color: palevioletred;
+    background-color: palegreen;
+}
+caption
+{
+    font-size: 20px;
+    font-weight: bolder;
+    color: slateblue;
+    font-family: "宋体",serif;
+    padding-bottom: 3px;
+    caption-side : top;
+}
+p.outline
+{
+    border: 2px solid yellow;
+    outline: 2px dashed red;
+}
+.sighthidden
+{
+    visibility: hidden;
+}
+.hidden
+{
+    display: none;
+}
+h5.？
+{
+    text-align: left;
+}
+p.pos_static
+{
+    position: static;
+    border: 3px dashed violet;
+}
+p.pos_relative
+{
+    position: relative;
+    left: 20px;
+}
+p.pos_absolute
+{
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+p.pos_fixed
+{
+    position: fixed;
+    top:100px;
+    right:400px;
+}
+p.pos_sticky
+{
+    position: sticky;
+    border: 2.5px double green;
+    background-color: springgreen;
+    color: honeydew;
+}
+.sp
+{
+    color: lavenderblush;
+    font-size: 20px;
+    font-weight: bold;
+}
+.thumbnail
+{
+    float:left;
+	width:110px;
+	height:90px;
+	margin:5px;
+}
+div.tec1 p.tes1,div.tec2>p.tes2,p.tes2+p.tes3,p.tes3~p.tes4 
+{
+    background-color: darkblue;
+    color: snow;
+    font-weight: bold;
+}
+#grade:out-of-range
+{
+    border: 2px solid red;
+}
+#grade:in-range
+{
+    border: 2px solid blue;
+}
+:target
+{
+    background-color: rgba(7, 17, 158, 0.966);
+    color: snow;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 20px;
+    border: 2px solid silver;
+}
+ul.guide
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(174, 255, 214);
+}
+ul.guide li
+{
+    background-color: rgb(197, 240, 180);
+}
+li.gui
+{
+    /*float: left;*/
+    /*display: inline;*/
+    color: rosybrown;
+    border: 1px solid white;
+}
+li.gui a
+{
+    display: block;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+li.gui a:link
+{
+    color: olive;
+}
+li.gui a:visited
+{
+    color: olive;
+}
+li.gui a:hover:not(.special)
+{
+    background-color: rgb(114, 233, 114);
+    color: honeydew;
+    font-weight: bolder;
+}
+/*.special
+{
+    background-color: blue;
+}*/
+li.gui a:active
+{
+    color: khaki;
+}
+.about_menu
+{
+    /*right: 0;*/
+    display: none;
+    position: absolute;
+    background-color: beige;
+    min-width: 100px;
+    box-shadow: 3px 5px 16px 1px black;
+}
+.about_menu .drop
+{
+    text-decoration: none;
+    color: royalblue;
+    padding: 12px 8px;
+    display: block; 
+    width: 100px;
+    border: none;
+}
+.about_menu .drop:hover
+{
+    background-color: rgb(226, 226, 253);
+}
+.but
+{
+    background-color: rgb(244, 220, 245);
+    color: darkgreen;
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;  
+}
+.me:hover .about_menu
+{
+    display: block;
+}
+.tips
+{
+    visibility: hidden;
+    width: 120px;
+    background-color: cornflowerblue;
+    color: #fff;
+
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    left: 350px;
+
+      /* 淡入 - 1秒内从 0% 到 100% 显示: */
+      opacity: 0;
+      transition: opacity 1s;
+}
+.tips::after
+{
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent cornflowerblue transparent transparent;
+
+}
+.tool
+{
+    display: block;
+    background-color:saddlebrown; 
+    text-align: center; 
+    padding: 10px 8px; 
+    width: 100px; 
+    height: 20px; 
+    color: snow;
+    
+}
+.tool:hover .tips
+{
+    visibility: visible;
+    /*淡入*/
+    opacity: 1;
+
+}
+div.img
+{
+    margin: 5px;
+    border: 2px double grey;
+    width: 180px;
+    float: left;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* IE8 及其更早版本 */
+}
+div.img:hover
+{
+    border-color: gold;
+    opacity:1.0;
+    filter:alpha(opacity=100); /* IE8 及其更早版本 */
+}
+div.pic,div.pic div
+{
+    opacity:0.4;
+}
+div.pic:hover, div.pic div:hover
+{
+    border-width: 3px;
+    border-color: gold;
+    opacity:1.0;
+}
+ul.pic li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    height: 44px;
+    display: block;
+}
+#navlist{position:relative;}
+#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
+#navlist li, #navlist a{height:44px;display:block;}
+
+#home{left:0px;width:46px;}
+#home{background:url('img_navsprites_hover.gif') 0 0;}
+#home a:hover{background: url('img_navsprites_hover.gif') 0 -45px;}
+
+#prev{left:63px;width:43px;}
+#prev{background:url('img_navsprites_hover.gif') -47px 0;}
+#prev a:hover{background: url('img_navsprites_hover.gif') -47px -45px;}
+
+#next{left:129px;width:43px;}
+#next{background:url('img_navsprites_hover.gif') -91px 0;}
+#next a:hover{background: url('img_navsprites_hover.gif') -91px -45px;}
+@media all {
+    p.media_type{color: aquamarine;font-weight: bolder;}
+    p.media_type:hover{display: block;background-color: blue;color: sandybrown;width: 120px;}
+}
+[title~=sad]/*分隔   [title][title=sad]*/
+{
+    color:slategray;
+    font-weight: 900;
+}
+[class~=acc]
+{
+    margin: 3px;
+}
+[class~=acc_button]
+{
+    border-style: groove;
+    background-color: salmon;
+    width: 60px;
+    height: 28px;
+    color: seashell;
+    font-size: 15px;
+    font-weight: bolder;
+    
+}
+[class~=acc_button]:active
+{
+    border-color: firebrick;
+    visibility: hidden;
+}
+[class~=acc_button]:hover
+{
+    border-color: slateblue;
+    color: yellow;
+}
+input[class~=acc_text],input[class~=acc_password]
+{
+    border: ridge;
+    height: 15px;
+    background-color: rgba(221, 221, 219, 0.4);
+}
+button[class*=se]/*字符串拆分子集*/
+{
+    background-color: salmon;
+}
+button[class|=it]/*关键词位于开头，完整且唯一或以-分隔*/
+{
+    color: teal;
+    font-weight: 900;
+    width: 60px;
+    height: 28px;
+    font-size: 15px;
+}
+button[class^=set]/*读取首部关键字*/
+{
+    color: thistle;
+    font-weight: 900;
+    width: 60px;
+    height: 28px;
+    font-size: 15px;
+}
+button[class$=set]
+{
+    color: blanchedalmond;
+}
+.table *
+{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 17px;
+}
+.table input
+{
+    height: 5px;
+}
+.table label
+{
+    font-size: 20px;
+    font-weight: 700;
+}
+div[class=table]
+{
+    margin: auto;
+    display: block;
+    width: 500px;
+    height: 500px;
+}
+div.table button
+{
+    background-color: peru;
+    color: azure;
+}
+div.table button:hover
+{
+    background-color: rebeccapurple;
+    color: rgb(197, 240, 180);
+}
+option[value=true]{color: darkorchid;background-color: gold;}
+option[value=false]{color: darkkhaki;background-color: rgb(102, 8, 8);}
+option[value=_]{color: crimson;background-color: black;}
+#select option:hover
+{
+    background-color: teal;
+    color: thistle;
+}
+@media screen and (max-width: 600px) , (max-height: 600px)
+{
+    .table
+    {
+       color: darkorange;
+    }
+}
+div.counter
+{
+    counter-reset: time;
+}
+.counter .counter::before
+{
+    counter-reset: time2;
+    counter-increment: time;
+    content: counter(time) ".";
+}
+.counter p
+{
+    font-size: 4px;
+    text-indent: 1em;
+    counter-increment: time2;
+}
+.counter p::before
+{
+    content: counter(time) "." counter(time2) ".";
+}
+p.important
+{
+    background-color: thistle !important;
+}
+p.nimportant
+{
+    color: white;
+}

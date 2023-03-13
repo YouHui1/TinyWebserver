@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>login</title>
+        <style>
+            body {
+                /* background-image: url('bg2.jpg'); */
+                background-color: aquamarine;
+                background-attachment: local;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <br/>
+        <br/>
+        <div align="center" style="margin: auto; height: auto; width: 500px;background-color:aliceblue;">
+            <form action="register" method="post">
+                <br/>
+                <legend style="margin: 3px; font-size: 25px;color: darkblue; font-weight: bold;">注册</legend>
+                <label for="account">用户名</label>
+                <input style="margin: 3px;" type="text" name="account" placeholder="输入用户名" required="required"><br/>
+                <label for="password">密码</label>
+                <input style="margin: 3px;" type="password" name="password" placeholder="输入密码" required="required"><br/>
+                <button style="margin: 3px;" type="submit">注册</button>
+            </form>
+            <form action="login" method="get">
+                <br/>
+                <button style="margin: 3px;" type="submit">返回登录</button>
+            </form>
+        </div>
+
+    </body>
+</html>
