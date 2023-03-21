@@ -43,9 +43,6 @@ private:
 
 
 public:
-    // int listenEvent;
-    // int connectEvent;
-
     int listenfd;
     struct sockaddr_in saddr;
     int port;

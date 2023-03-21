@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[]) {
     // 0 LT LT 1 ET LT 2 LT ET 3 ET ET
-    // 0 proactor 1 reactor
+    // 0 siggle_reactor 1 multi_reactor
     int mode = 2;
     int pattern = 0;
     if (argc == 2) {

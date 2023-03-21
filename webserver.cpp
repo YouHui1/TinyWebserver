@@ -155,9 +155,7 @@ void WebServer::start() {
                 }
             } else if (events[i].events & EPOLLIN) {
                 LOG_DEBUG("READ");
-                // printf("yes1 %d\n", ++count1);
                 readProcessing(sockfd);                
-                // printf("yes2 %d\n", ++count2);
         } else if (events[i].events & EPOLLOUT) {
                 LOG_DEBUG("WRITE");
                 writeProcessing(sockfd);
@@ -195,7 +193,6 @@ void WebServer::adjustTimer(Timer* timer) {
 
 void WebServer::setTimer(client_data& c_, struct sockaddr_in& c_addr, int& cfd) {
     Timer* timer = new Timer();
-    // printf("setTimer%d\n", count1);
     user_timers[cfd].address = c_addr;
     user_timers[cfd].socketfd = cfd;
     timer->user_data = &user_timers[cfd];
