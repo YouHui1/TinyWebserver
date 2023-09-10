@@ -2,7 +2,7 @@
 > File Name:     http_conn.cpp
 > Author:        youhui
 > Created Time:  2023年02月03日 星期五 17时47分39秒
-> Description:   
+> Description:
  ************************************************************************/
 #include "http_conn.h"
 
@@ -20,7 +20,7 @@ const char *error_404_form = "The requested file was not found on this server.\n
 const char *error_500_title = "Internal Error";
 const char *error_500_form = "There was an unusual problem serving the request file.\n";
 
-const char* doc_root = "/home/youhui/web/TinyWebServer/src/prac";
+const char* doc_root = "/home/youhui/TinyWebserver/src/prac";
 
 Mutex lock;
 
@@ -47,10 +47,10 @@ void HttpConn::init(int sockfd_, const sockaddr_in& addr, Utils* u_, Config* c_)
     sockfd = sockfd_;
     address = addr;
 
-    
+
     int reuse = 1;
     setsockopt(sockfd_, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
-    
+
     utils->addfd(epollfd, sockfd_, true, config->connect_mode);
     user_count++;
 
@@ -148,7 +148,7 @@ bool HttpConn::write() {
         if (byte_have_send >= iv[0].iov_len) {
             iv[0].iov_len = 0;
             iv[1].iov_base = file_address + (byte_have_send - write_idx);
-            iv[1].iov_len = byte_to_send; 
+            iv[1].iov_len = byte_to_send;
         } else {
             iv[0].iov_base = write_buf + byte_have_send;
             iv[0].iov_len = iv[0].iov_len - byte_have_send;
@@ -164,7 +164,7 @@ bool HttpConn::write() {
                 return false;
             }
         }
-    
+
     } while (config->connect_mode == 1);
     // if (config->connect_mode == 0) {
     //     tmp = writev(sockfd, iv, iv_count);
@@ -178,7 +178,7 @@ bool HttpConn::write() {
     //     if (byte_have_send >= iv[0].iov_len) {
     //         iv[0].iov_len = 0;
     //         iv[1].iov_base = file_address + (byte_have_send - write_idx);
-    //         iv[1].iov_len = byte_to_send; 
+    //         iv[1].iov_len = byte_to_send;
     //     } else {
     //         iv[0].iov_base = write_buf + byte_have_send;
     //         iv[0].iov_len = iv[0].iov_len - byte_have_send;
@@ -213,7 +213,7 @@ bool HttpConn::write() {
         //     if (byte_have_send >= iv[0].iov_len) {
         //         iv[0].iov_len = 0;
         //         iv[1].iov_base = file_address + (byte_have_send - write_idx);
-        //         iv[1].iov_len = byte_to_send; 
+        //         iv[1].iov_len = byte_to_send;
         //     } else {
         //         iv[0].iov_base = write_buf + byte_have_send;
         //         iv[0].iov_len = iv[0].iov_len - byte_have_send;
@@ -232,7 +232,7 @@ bool HttpConn::write() {
         // }
 
     // }
-    
+
     return true;
 }
 
@@ -240,7 +240,7 @@ HTTP_CODE HttpConn::process_read() {
     LINE_STATUS line_status = LINE_OK;
     HTTP_CODE ret = NO_REQUEST;
     char * text = NULL;
-    while ((check_state == CHECK_STATE_CONTENT && line_status == LINE_OK) 
+    while ((check_state == CHECK_STATE_CONTENT && line_status == LINE_OK)
     || ((line_status = parse_line()) == LINE_OK))
     {
         // 解析到请求体或解析到一行完整数据
@@ -248,7 +248,7 @@ HTTP_CODE HttpConn::process_read() {
         LOG_INFO("%s", text);
 
         start_line = check_idx;
-        
+
         switch(check_state) {
 
         case CHECK_STATE_REQUESTLINE:
@@ -257,7 +257,7 @@ HTTP_CODE HttpConn::process_read() {
 
             if (ret == BAD_REQUEST)
                 return BAD_REQUEST;
-            
+
             break;
         }
         case CHECK_STATE_HEADER:
@@ -291,7 +291,7 @@ HTTP_CODE HttpConn::parse_request_line(char* text) {
     url = strpbrk(text, " \t");
     *url++ = '\0';
     // GET\0/ HTTP/1.1
-    
+
     char* method_ = text;
     if (strcasecmp(method_, "GET") == 0) {
         method = GET;
@@ -380,7 +380,7 @@ LINE_STATUS HttpConn::parse_line() {
             } else if (read_buf[check_idx + 1] == '\n') {
                 read_buf[check_idx++] = '\0';
                 read_buf[check_idx++] = '\0';
-                return LINE_OK; 
+                return LINE_OK;
             }
             return LINE_BAD;
         } else if (tmp == '\n') {
@@ -402,7 +402,7 @@ HTTP_CODE HttpConn::do_request() {
     if (cgi == 1) {
         // LOG_DEBUG("content: %s\n", content);
         char account[100];
-        char password[100];        
+        char password[100];
         if (strcmp(p, "/register") == 0) {
             size_t i = 8;
             for (; content[i] != '&'; ++i) {
@@ -443,10 +443,10 @@ HTTP_CODE HttpConn::do_request() {
         } else if (strcmp(p, "/video") == 0) {
             strcpy(url, "/video.html");
         }
-        
+
         strncpy(file_path+len, url, FILENAME_LEN - 1 - len);
 
-        
+
     }
     else {
         if (strcmp(p, "/register?") == 0 || strcmp(p, "/login?") == 0
@@ -495,7 +495,7 @@ bool HttpConn::userVerify(const char* account, const char* password, bool lr) {
     MYSQL_FIELD* fields = nullptr;
     MYSQL_RES* res = nullptr;
 
-    snprintf(order, 256, "SELECT username, passwd FROM user WHERE username='%s' LIMIT 1", account);
+    snprintf(order, 256, "SELECT username, password FROM user WHERE username='%s' LIMIT 1", account);
     if (mysql_query(sql, order)) {
         LOG_ERROR("SELECT error: %s\n", mysql_error(sql));
         mysql_free_result(res);
@@ -522,12 +522,12 @@ bool HttpConn::userVerify(const char* account, const char* password, bool lr) {
     if (lr && flag) {
         LOG_DEBUG("REGISTER");
         bzero(order, 256);
-        snprintf(order, 256, "INSERT INTO user(username, passwd) VALUES('%s','%s')", account, password);
+        snprintf(order, 256, "INSERT INTO user(username, password) VALUES('%s','%s')", account, password);
         LOG_DEBUG("%s", order);
         lock.lock();
-        if(mysql_query(sql, order)) { 
+        if(mysql_query(sql, order)) {
             LOG_DEBUG( "INSERT error!");
-            flag = false; 
+            flag = false;
         }
         lock.unlock();
         flag = true;
@@ -582,7 +582,7 @@ bool HttpConn::add_headers(int con_len) {
 }
 bool HttpConn::process_write(HTTP_CODE ret) {
 
-    switch(ret) 
+    switch(ret)
     {
         case INTERNAL_ERROR:
         {
@@ -622,7 +622,7 @@ bool HttpConn::process_write(HTTP_CODE ret) {
                 // 指向写缓冲区
                 iv[0].iov_base = write_buf;
                 iv[0].iov_len = write_idx;
-                // 
+                //
                 iv[1].iov_base = file_address;
                 iv[1].iov_len = file_state.st_size;
                 iv_count = 2;

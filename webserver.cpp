@@ -1,8 +1,11 @@
 #include "webserver.h"
 
+
+using std::make_shared;
+
 WebServer::WebServer(int port_, int event_mode_, int pattern_, bool linger_,
                     bool log_open_, int log_que_size_, int log_level,
-                    int thread_num, int conn_num, 
+                    int thread_num, int conn_num,
                     std::string host_, std::string db_, std::string user_, std::string pwd_):
     utils(new Utils()), users(new HttpConn[MAX_FD]), user_timers(new client_data[MAX_FD]),
     threadpool(new ThreadPool<HttpConn>(thread_num)), timerlist(new TimerList()), config(new Config()),
@@ -10,8 +13,9 @@ WebServer::WebServer(int port_, int event_mode_, int pattern_, bool linger_,
 {
     utils->addsig(SIGPIPE, SIG_IGN);
     Utils::pipefd = pipefd;
+
     SqlConnPool::Instance()->init(host_, db_, user_, pwd_, conn_num);
-    // 
+    //
 
     port = port_;
     config->listen_mode = event_mode_ % 2;
@@ -24,7 +28,7 @@ WebServer::WebServer(int port_, int event_mode_, int pattern_, bool linger_,
         else {
             LOG_INFO("========== Server Log Init ==========");
             LOG_INFO("Port: %d", port);
-            LOG_INFO("Listen mode: %s, Connect mode: %s", 
+            LOG_INFO("Listen mode: %s, Connect mode: %s",
                     (config->listen_mode == 0 ? "LT" : "ET"),
                     (config->connect_mode == 0 ? "LT" : "ET"));
             LOG_INFO("Pattern: %s", (config->pattern == 0 ? "Proactor" : "Reactor"));
@@ -59,7 +63,7 @@ bool WebServer::socketInit() {
         LOG_ERROR("Port: %d error!",  port);
         return false;
     }
-    struct linger optLinger = {0}; 
+    struct linger optLinger = {0};
     if (openLinger) { // 优雅关闭
         optLinger.l_onoff = 1;
         optLinger.l_linger = 1;
@@ -155,7 +159,7 @@ void WebServer::start() {
                 }
             } else if (events[i].events & EPOLLIN) {
                 LOG_DEBUG("READ");
-                readProcessing(sockfd);                
+                readProcessing(sockfd);
         } else if (events[i].events & EPOLLOUT) {
                 LOG_DEBUG("WRITE");
                 writeProcessing(sockfd);
@@ -173,18 +177,18 @@ void WebServer::start() {
 }
 
 void WebServer::closeTimer(client_data& c_) {
-    Timer* timer = c_.timer;
+    etimer_t timer = c_.timer;
     timer->cb_func(&c_);
-    if (timer) {
+    if (timer != nullptr) {
         timerlist->del_timer(timer);
     }
     LOG_INFO("Close fd: %d", c_.socketfd);
     return;
 }
-void WebServer::adjustTimer(Timer* timer) {
-    if (timer) {
-        time_t cur = time(NULL);
-        timer->expire = cur + 3 * TIMESLOT;
+void WebServer::adjustTimer(etimer_t timer) {
+    if (timer != nullptr) {
+        _time_t cur = Clock::now();
+        timer->expire = cur + 3 * MS(TIMESLOT * 1000);
         timerlist->adjust_timer(timer);
         LOG_INFO("Adjust timer once");
     }
@@ -192,12 +196,12 @@ void WebServer::adjustTimer(Timer* timer) {
 }
 
 void WebServer::setTimer(client_data& c_, struct sockaddr_in& c_addr, int& cfd) {
-    Timer* timer = new Timer();
+    etimer_t timer = make_shared<Timer>();
     user_timers[cfd].address = c_addr;
     user_timers[cfd].socketfd = cfd;
     timer->user_data = &user_timers[cfd];
     timer->cb_func = cb_func;
-    time_t cur = time(NULL);
+    _time_t cur = Clock::now();
     user_timers[cfd].timer = timer;
     timerlist->add_timer(timer);
     LOG_INFO("Set timer, fd: %d", c_.socketfd);
@@ -260,7 +264,7 @@ void WebServer::readProcessing(int& sockfd) {
         }
 
     } else {
-        adjustTimer(user_timers[sockfd].timer); 
+        adjustTimer(user_timers[sockfd].timer);
         users[sockfd].read_or_write = 0;
         threadpool->append(users + sockfd);
         while (true) {
@@ -298,7 +302,7 @@ void WebServer::writeProcessing(int& sockfd) {
                 break;
             }
         }
-        
+
     }
 }
 

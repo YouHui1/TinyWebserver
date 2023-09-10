@@ -12,9 +12,9 @@ int main(int argc, char* argv[]) {
         pattern = atoi(argv[2]);
     }
     WebServer webserver(9000, mode, pattern, true,
-                        false, 512, 0, 8, 
+                        false, 512, 0, 8,
                         8, "localhost", "webserver", "webtest", "123456");
     webserver.start();
-    
+
     return 0;
 }

@@ -1,0 +1,82 @@
+2023-09-03 22:38:44.294673 [INFO]:========== Server Log Init ==========
+2023-09-03 22:38:44.294729 [INFO]:Port: 9000
+2023-09-03 22:38:44.294739 [INFO]:Listen mode: LT, Connect mode: ET
+2023-09-03 22:38:44.294745 [INFO]:Pattern: Proactor
+2023-09-03 22:38:44.294750 [INFO]:Logsys level: 0
+2023-09-03 22:38:44.294756 [INFO]:Threadpool num: 8
+2023-09-03 22:38:44.294833 [INFO]:========== Server Start ==========
+2023-09-03 22:38:47.275713 [DEBUG]:LISTEN
+2023-09-03 22:38:47.276012 [INFO]:Set timer, fd: 16
+2023-09-03 22:38:47.276202 [DEBUG]:LISTEN
+2023-09-03 22:38:47.276283 [INFO]:Set timer, fd: 17
+2023-09-03 22:38:47.298586 [DEBUG]:READ
+2023-09-03 22:38:47.298699 [INFO]:Adjust timer once
+2023-09-03 22:38:47.298712 [INFO]:GET / HTTP/1.1
+2023-09-03 22:38:47.298777 [INFO]:Host: 192.168.56.102:9000
+2023-09-03 22:38:47.298783 [INFO]:Connection: keep-alive
+2023-09-03 22:38:47.298789 [INFO]:Upgrade-Insecure-Requests: 1
+2023-09-03 22:38:47.298796 [INFO]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69
+2023-09-03 22:38:47.298804 [INFO]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2023-09-03 22:38:47.298809 [INFO]:Accept-Encoding: gzip, deflate
+2023-09-03 22:38:47.298814 [INFO]:Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-09-03 22:38:47.298818 [INFO]:
+2023-09-03 22:38:47.298843 [INFO]:HTTP/1.1 200 OK
+
+2023-09-03 22:38:47.298852 [INFO]:HTTP/1.1 200 OK
+Content-Length:1322
+
+2023-09-03 22:38:47.298859 [INFO]:HTTP/1.1 200 OK
+Content-Length:1322
+Content-Type:text/html
+
+2023-09-03 22:38:47.298863 [INFO]:HTTP/1.1 200 OK
+Content-Length:1322
+Content-Type:text/html
+
+
+2023-09-03 22:38:47.298912 [DEBUG]:WRITE
+2023-09-03 22:38:47.299011 [INFO]:Adjust timer once
+2023-09-03 22:38:49.295410 [INFO]:Timer tick
+2023-09-03 22:38:54.296336 [INFO]:Timer tick
+2023-09-03 22:38:59.296882 [INFO]:Timer tick
+2023-09-03 22:39:02.705376 [DEBUG]:READ
+2023-09-03 22:39:02.705466 [INFO]:Adjust timer once
+2023-09-03 22:39:02.705485 [INFO]:POST /login HTTP/1.1
+2023-09-03 22:39:02.705524 [INFO]:Host: 192.168.56.102:9000
+2023-09-03 22:39:02.705527 [INFO]:Connection: keep-alive
+2023-09-03 22:39:02.705530 [INFO]:Content-Length: 28
+2023-09-03 22:39:02.705533 [INFO]:Cache-Control: max-age=0
+2023-09-03 22:39:02.705535 [INFO]:Upgrade-Insecure-Requests: 1
+2023-09-03 22:39:02.705537 [INFO]:Origin: http://192.168.56.102:9000
+2023-09-03 22:39:02.705540 [INFO]:Content-Type: application/x-www-form-urlencoded
+2023-09-03 22:39:02.705543 [INFO]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69
+2023-09-03 22:39:02.705547 [INFO]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2023-09-03 22:39:02.705550 [INFO]:Referer: http://192.168.56.102:9000/
+2023-09-03 22:39:02.705552 [INFO]:Accept-Encoding: gzip, deflate
+2023-09-03 22:39:02.705555 [INFO]:Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-09-03 22:39:02.705557 [INFO]:
+2023-09-03 22:39:02.705559 [INFO]:account=test&password=123456
+2023-09-03 22:39:02.705562 [INFO]:Verify user:test, password:123456
+2023-09-03 22:39:02.767051 [DEBUG]:MYSQL ROW: test 123456
+2023-09-03 22:39:02.767125 [DEBUG]:UserVerify success!!
+2023-09-03 22:39:02.767151 [INFO]:HTTP/1.1 200 OK
+
+2023-09-03 22:39:02.767154 [INFO]:HTTP/1.1 200 OK
+Content-Length:1106
+
+2023-09-03 22:39:02.767157 [INFO]:HTTP/1.1 200 OK
+Content-Length:1106
+Content-Type:text/html
+
+2023-09-03 22:39:02.767160 [INFO]:HTTP/1.1 200 OK
+Content-Length:1106
+Content-Type:text/html
+
+
+2023-09-03 22:39:02.767306 [DEBUG]:WRITE
+2023-09-03 22:39:02.767715 [INFO]:Adjust timer once
+2023-09-03 22:39:04.298067 [INFO]:Timer tick
+2023-09-03 22:39:07.687529 [DEBUG]:CLOSE
+2023-09-03 22:39:07.689342 [INFO]:Close fd: 17
+2023-09-03 22:39:07.694039 [DEBUG]:CLOSE
+2023-09-03 22:39:07.694747 [INFO]:Close fd: 16
