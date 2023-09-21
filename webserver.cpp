@@ -170,7 +170,7 @@ void WebServer::start() {
         if (timeout) {
             // timer_handler_(timerlist, TIMESLOT);
             timer_handler(timerlist, TIMESLOT);
-            LOG_INFO("Timer tick");
+            LOG_DEBUG("Timer tick");
             timeout = false;
         }
     }

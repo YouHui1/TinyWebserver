@@ -105,7 +105,10 @@ void TimerList::add_timer(etimer_t timer) {
 }
 
 void TimerList::del_timer(etimer_t timer) {
-    if (dict.count(timer) == 0) return;
+    if (dict.count(timer) == 1) {
+        timer_list.clear();
+        return;
+    };
     int i = dict[timer];
     int n = timer_list.size() - 1;
     std::swap(timer_list[i], timer_list[n]);
@@ -135,9 +138,9 @@ void TimerList::tick() {
         if (std::chrono::duration_cast<MS>(cur->expire - cur_time).count() > 0) {
             break;
         }
-
         cur->cb_func(cur->user_data);
         del_timer(cur);
+        LOG_DEBUG("close: %d \n", cur->user_data->socketfd);
     }
 }
 
